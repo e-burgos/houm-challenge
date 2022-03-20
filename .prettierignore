@@ -1,0 +1,11 @@
+node_modules
+dist
+build
+lib
+coverage
+public
+
+*.md
+*.mdx
+
+.next

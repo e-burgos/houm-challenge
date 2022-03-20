@@ -1,0 +1,43 @@
+{
+  "name": "houm-challenge",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently --kill-others \"next dev\" \"npm run postcss\"",
+    "build": "npm run build:tailwind && next build",
+    "start": "next start -p 8080",
+    "test": "jest --passWithNoTests",
+    "formatter": "npm run format && npm run lint-fix",
+    "format": "prettier --write .",
+    "lint-fix": "npm run lint -- --fix",
+    "lint": "eslint . --max-warnings=0",
+    "build:tailwind": "npx tailwindcss -o styles/tailwind.css --minify",
+    "postcss": "npx tailwindcss -i ./styles/input.css -o ./styles/tailwind.css --minify --watch"
+  },
+  "dependencies": {
+    "next": "12.1.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-query": "^3.34.14"
+  },
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "5.15.3",
+    "@popperjs/core": "2.9.1",
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/node": "^17.0.21",
+    "@types/react": "^17.0.40",
+    "axios": "^0.26.1",
+    "concurrently": "^7.0.0",
+    "cssnano": "^5.0.16",
+    "eslint": "8.11.0",
+    "eslint-config-next": "12.1.0",
+    "jest": "^27.3.1",
+    "postcss": "^8.4.6",
+    "prettier": "^2.4.0",
+    "tailwindcss": "^3.0.18",
+    "ts-jest": "^27.0.7",
+    "typescript": "^4.6.2"
+  }
+}
